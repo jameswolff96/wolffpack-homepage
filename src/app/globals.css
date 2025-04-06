@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-wolff-primary: #5e81ac;
+    --color-wolff-accent: #81a1c1;
+    --color-wolff-hover: #88c0d0;
+    --color-wolff-background: #1e1e2e;
+    --color-wolff-foreground: #f8f8f2;
+
+    --font-family-sans: 'Inter', 'system-ui', sans-serif;
+    --font-family-mono: 'Jetbrains Mono', monospace;
+
+    --border-radius-xl: 1rem;
+    --border-radius-2xl: 1.5rem;
+
+    --box-shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

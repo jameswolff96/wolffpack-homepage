@@ -1,0 +1,19 @@
+services:
+  wolffpack-site:
+    build: .
+    container_name: wolffpack-site
+    restart: unless-stopped
+    expose:
+      - "3000"
+    networks:
+      - wolffnet
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.wolffpack.rule=Host(`wolffpack.works`) || Host(`www.wolffpack.works`)"
+      - "traefik.http.routers.wolffpack.entrypoints=websecure"
+      - "traefik.http.routers.wolffpack.tls.certresolver=letsencrypt"
+      - "traefik.http.services.wolffpack.loadbalancer.server.port=3000"
+
+networks:
+  wolffnet:
+    external: true
