@@ -4,7 +4,7 @@ services:
     container_name: wolffpack-site
     restart: unless-stopped
     expose:
-      - "3000"
+      - "80"
     networks:
       - wolffnet
     labels:
